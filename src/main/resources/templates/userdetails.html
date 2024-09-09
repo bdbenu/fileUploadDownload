@@ -1,0 +1,44 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div>
+		<h3>FILE UPLOAD</h3>
+		<div class="card">
+			<div class="card-header"></div>
+			<div class="card-body">
+			<form th:object="${userDetails}" th:action="@{/uploaded}" method="POST" enctype="multipart/form-data">
+			<table>
+			<tr>
+			<td>Name: </td>
+			<td><input type="text" th:field="*{imageName}"  class="form-control bordered"/></td>
+			</tr>
+			
+			<tr>
+			<td>Files: </td>
+			<td><input type="file" th:field="*{file}"  class="form-control bordered"/></td>
+			
+			</tr>
+			
+			<tr>
+			<td></td>
+			<td><input type="submit" value="Register" class="btn btn-primary"/></td>
+			</tr>
+			
+			</table>
+			</form>
+			
+			</div>
+			<div class="card-footer"></div>
+		</div>
+		</div>
+</body>
+</html>
